@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://unpkg.com/vue@3"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" href="vue.ico">
+    <title>VUE JS</title>
+</head>
+
+<body>
+    <!--Instalar vue desde internet-->
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
+    </script>
+
+    <img class="fondo" src="xbox.png" alt="">
+    
+    <div id="app">
+        <!-- <h1 :class="pTitulos">Titulo</h1> -->
+        <header class="top">
+            <!-- <img src="UDG-LOGO.png" alt="UDG" width="200px"> -->
+            <h1 :class="nombre">XBOX de Microsoft</h1>
+        </header>
+
+        <div class="opciones">
+            <!--Clase dinamica-->
+            <div>
+                <h1>POR FAVOR, ELIGE UNA OPCIÓN </h1>
+                <select :class="menu" v-model="multiSelected">
+                    <option>GENERAL</option>
+                    <option>CONSOLAS DE LA NUEVA GENERACIÓN</option>
+                    <option>BIBLIOGRAFÍA</option>
+                </select>
+            </div>
+            <!-- <span>Selected: {{ multiSelected }}</span> -->
+        </div>
+
+        <div V-if="multiSelected == 'GENERAL'">
+            <div class="historia">
+                <h2>ANTECEDENTES</h2>
+                <div><img :class="logo" src="Xbox-USA.png" alt="XBOX"></div>
+                <p>
+                    Antes de que Microsoft incursionara en el mercado de las videoconsolas con un sistema basado en la
+                    arquitectura PC, existieron bastantes casos de consolas basadas en un ordenador, generalmente con
+                    pobres resultados.
+                </p>
+                <li>
+                    La Sega Master System hizo el camino inverso al lanzar el ordenador doméstico Sega SC-3000.
+                </li>
+                <li>
+                    La Amstrad GX4000 es una versión recortada de la gama Amstrad CPC Plus.
+                </li>
+                <li>
+                    La Atari XE está basada en la gama de computadoras Atari 65XE.
+                </li>
+                <li>
+                    La Commodore 64 Games System (Superconsola C64 en España) es un Commodore 64 sin teclado.
+                </li>
+                <li>
+                    Las Zemmix son una gama de consolas basadas en MSX, MSX2 y MSX2+ con un éxito local en Corea del Sur
+                </li>
+                <li>
+                    La Amiga CD32 se basa en el Commodore Amiga 1200. Es uno de los pocos casos con un éxito relativo.
+                </li>
+                <li>
+                    La Pippin fue una videoconsola que desarrolló Apple basada en sus equipos Mac PowerPC para emular el
+                    sistema de licenciarlo a terceros como ya hacía la 3DO Interactive Multiplayer. Es de lejos el mayor
+                    fracaso de este tipo de conversiones.
+                </li>
+                <p>
+                    En 1998, Microsoft colaboró con Sega, en la adaptación del sistema operativo Windows CE para la
+                    videoconsola Dreamcast. Se la dotó de teclado y ratón, pero los juegos que los soportaron son
+                    escasos, Además la mayoría de videojuegos se saltaban el sistema operativo para exprimir el hardware
+                    de la Dreamcast.
+                    <br><br>
+                    En su generación, Sony lanzó para la PlayStation 2 Linux para PlayStation 2, una distribución
+                    oficial de Linux solo comercializada en Japón donde el espacio reducido de la vivienda es un
+                    problema crónico. Por ello el soporte de disco duro IDE de su periférico de interfaz de red.
+                </p>
+            </div>
+
+            <div class="desarrollo">
+                <h2>DESARROLLO</h2>
+                <div><img :class="primerX" src="Xbox-Console-Set.png" alt="Primer Xbox"></div>
+                <P>
+                    La contratación por parte de Microsoft de un pequeño equipo de ingenieros de software especializados
+                    en videojuegos, hace concebir a La Xbox como hardware con propósito específico, en un contexto
+                    equivalente a como Apple concibió sus computadoras en el ámbito del propósito general. Microsoft
+                    retrasó en varias ocasiones la noticia de su nueva consola, y finalmente fue revelado como proyecto
+                    a finales de 1999, a raíz de las entrevistas con Bill Gates. Gates dijo que un dispositivo de juego
+                    / entretenimiento es esencial para la convergencia multimedia en los nuevos tiempos del ocio
+                    digital. El 10 de marzo de 2000, fue confirmado el nuevo proyecto Xbox, mediante un comunicado
+                    oficial de Microsoft.
+                    <br><br>
+                    Según el libro Smartbomb, por Heather Chaplin y Aaron Ruby, el notable éxito de la PlayStation de
+                    Sony preocupó a Microsoft a fines de los años 1990. El creciente mercado de videojuegos parecía
+                    amenazar el mercado de la PC, que Microsoft ha dominado y ha sido una de sus grandes fuentes de
+                    ingresos. Además, diversificaría la línea de productos de Microsoft como una empresa del mercado de
+                    juegos de consola, que hasta ese momento se había concentrado mucho en el software.
+                    <br><br>
+                    Según el libro de Dean Takahashi, "Opening the Xbox",3​ fue conocida como "DirectX-box", haciendo
+                    alusión del uso del DirectX en una consola de videojuegos. El nombre definitivo para su
+                    comercialización fue "Xbox", la consola todavía conservó algo de la palabra DirectX, especialmente
+                    la letra "X" que forma el logotipo del sistema.
+                    <br><br>
+                    Cuando se acercaba el lanzamiento de la consola, James Allard era el responsable del desarrollo del
+                    hardware y del software; Ed Fries, del desarrollo de los juegos en la plataforma, y Mitch Koch de
+                    ventas y marketing; los responsables informaban a Robbie Bach. Este equipo de Microsoft también fue
+                    responsable del desarrollo de la Xbox 360
+                </P>
+            </div>
+
+        </div>
+
+        <div V-if="multiSelected == 'CONSOLAS DE LA NUEVA GENERACIÓN'">
+            <div class="consolas">
+                <div class="cards_wrap">
+                    <div class="card_item">
+                        <div class="card_inner">
+                            <img class="img" src="https://compass-ssl.xbox.com/assets/f0/85/f085c120-d3d5-4424-8b70-eb25deaa326e.png?n=XBX_A-BuyBoxBGImage01-D.png%22"
+                                alt="XBOX SERIES X">
+                            <div class="nombre">XBOX SERIES X</div>
+                            <div class="intro">La Xbox más rápida y más potente de la historia.</div><br>
+                            <a class="mas" href="https://www.xbox.com/consoles/xbox-series-x" target="_blank">MÁS INFORMACIÓN</a>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div class="card_inner">
+                            <img class="imgS" src="https://compass-ssl.xbox.com/assets/3e/87/3e87b313-21dd-452b-9f1e-09ecf2453542.png?n=0202999-CompleteControl_Console-D.png"
+                                alt="XBOX SERIES X">
+                            <div class="nombre">XBOX SERIES S</div>
+                            <div class="intro">Rendimiento de nueva generación en la Xbox más pequeña de la historia.</div><br>
+                            <a class="mas" href="https://www.xbox.com/consoles/xbox-series-s" target="_blank">MÁS INFORMACIÓN</a>
+                        </div>
+                    </div>
+                                        
+                </div>
+            </div>
+        </div>
+
+        <div class="ultimo" V-if="multiSelected == 'BIBLIOGRAFÍA'">
+            <div class="bibliografia">
+                <h1>PUEDES CONSULTAR MAS INFORMACIÓN AQUÍ</h1>
+                <a href="https://www.xbox.com/es-MX/?xr=mebarnav" target="_blank">MÁS SOBRE XBOX</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Script para hacer uso de VUE-->
+    <script type="module">
+        import { createApp } from 'vue'
+
+        createApp({
+            data() {
+                return {
+                    nombre: 'name',//Hace referencia a la clase en el CSS
+                    logo: 'lXbox',
+                    primerX: 'pXbox',
+                    menu: 'aside',
+                    multiSelected: ['GENERAL']
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
